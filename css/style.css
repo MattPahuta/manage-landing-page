@@ -263,6 +263,80 @@ p[data-width="wide"] {
 
 }
 
+/* Numbered List */
+
+.numbered-items {
+  counter-reset: count;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.numbered-items li {
+  counter-increment: count;
+}
+
+/* put a class on this div */
+.numbered-items div {
+  position: relative;
+  display: grid;
+  align-items: center;
+  column-gap: var(--size-400);
+  grid-template-columns: min-content 1fr;
+}
+
+.numbered-items__heading {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  line-height: 1;
+  letter-spacing: -0.28px;
+}
+
+
+.numbered-items__content {
+  max-width: 45ch;
+  grid-column: 1 / -1;
+}
+
+/* test this breakpoint furhter - smaller? */
+@media (min-width: 30em) {
+  .numbered-items__content {
+    grid-column: 2 / -1;
+  }
+}
+
+.numbered-items div::before,
+.numbered-items div::after {
+  height: 40px;
+  grid-row: 1 / 2;
+  border-radius: 100vw;
+}
+
+.numbered-items div::before {
+  content: "0" counter(count);
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  padding: 0 var(--size-500);
+  grid-column: 1 / 2;
+}
+
+@media (max-width: 30em) {
+  .numbered-items div::after {
+    --bg: var(--clr-accent-100);
+    content: "";
+    display: block;
+    z-index: -1;
+    grid-column: 1 / -1;
+    background: var(--bg);
+    box-shadow: 5em 0 0 var(--bg);
+  } 
+}
+
+
+
+
 /* CTA Styles */
 
 .cta { 
@@ -430,9 +504,9 @@ input:where([type="text"], [type="email"], ) {
 .container {
   /* locally scoped custom props */
   --max-width: 1110px;
-  --padding: 1rem;
+  --container-padding: 1rem;
 
-  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  width: min(var(--max-width), 100% - (var(--container-padding) * 2));
   margin-inline: auto;
 }
 
@@ -466,7 +540,22 @@ input:where([type="text"], [type="email"], ) {
   margin-top: var(--flow-spacer, 3em);
 }
 
+.text-center {
+  text-align: center;
+}
 
+.text-center p {
+  margin-inline: auto;
+}
+
+@media (max-width: 50em) {
+  .text-center-sm-only {
+    text-align: center;
+  }
+  .text-center-sm-only p {
+    margin-inline: auto;
+  }
+}
 
 
 .text-primary-400 {
@@ -526,6 +615,10 @@ input:where([type="text"], [type="email"], ) {
 
 .padding-block-900 {
   padding-block: var(--size-900);
+}
+
+.margin-bottom-700 {
+  margin-block-end: var(--size-700);
 }
 
 /* rename this class and .display-md-inline-flex */
