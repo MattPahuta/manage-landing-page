@@ -8,7 +8,8 @@
   --clr-primary-400: hsl(228, 39%, 23%);
 
   --clr-neutral-900: hsl(232, 12%, 13%);
-  --clr-neutral-100: hsl(0, 0%, 98%);
+  --clr-neutral-200: hsl(0, 0%, 97%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
 
   /* fonts and weights */
   --ff-primary: 'Be Vietnam Pro', sans-serif;
@@ -334,7 +335,28 @@ p[data-width="wide"] {
   } 
 }
 
+/* Slider */
 
+.slider {
+  display: flex;
+  list-style: none;
+}
+
+.slider > * {
+  position: relative;
+  width: 100%;
+  flex: 0 0 auto;
+  border-radius: var(--size-300);
+  background: var(--clr-neutral-200);
+}
+
+.slider img {
+  width: var(--size-800);
+  position: relative;
+  top: calc(var(--size-800) / 2);
+  margin-inline: auto;
+
+}
 
 
 /* CTA Styles */
