@@ -216,15 +216,18 @@ p[data-width="wide"] {
 }
 
 @media (max-width: 47em) {
+  .primary-header[data-overlay] {
+    position: relative;
+    z-index: 999;
+  }
 
   .primary-navigation {
     display: none;
-
     position: fixed;
     padding: var(--size-700);
     inset: 7rem var(--size-400) auto;
     max-width: 25rem;
-    margin-left: auto;
+    margin-inline: auto;
     background: var(--clr-neutral-100);
     border-radius: var(--size-100);
     box-shadow: 0 0 .75em rgb(0,0,0,0.05);
@@ -248,6 +251,11 @@ p[data-width="wide"] {
     display: block;
 
   }
+
+  .primary-navigation[data-visible] .mobile-nav-toggle {
+    background-image: url('../images/icon-close.svg');
+  }
+
   .mobile-nav-toggle {
     display: block;
     position: fixed;
@@ -257,9 +265,21 @@ p[data-width="wide"] {
     background: transparent;
     border: 0;
     padding: 0.5em;
+    width: 1.65em;
+    aspect-ratio: 1;
+
+    background-image: url('../images/icon-hamburger.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
-  .mobile-nav-toggle .icon-close {
+
+  /* .mobile-nav-toggle .icon-close {
     display: none;
+  } */
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url('../images/icon-close.svg');
   }
 
 }
@@ -559,7 +579,7 @@ input:where([type="text"], [type="email"], ) {
   background: var(--clr-accent-400);
 }
 
-/* Blob backgroun image */
+/* Blob background image */
 
 @media (max-width: 47em) {
   .hero__image {
@@ -586,6 +606,29 @@ input:where([type="text"], [type="email"], ) {
   .hero__image::before {
     width: 45%;
   }
+}
+
+/* sales points */
+
+.sales-points_blob {
+  position: relative;
+}
+
+.sales-points__blob::before {
+  content: url('');
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  max-height: 70vh;
+  bottom: 85%;
+  width: 200px;
+  aspect-ratio: 1 / 1.2;
+
+  background-image: url('../images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+
 }
 
 

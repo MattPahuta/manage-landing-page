@@ -20,8 +20,8 @@
         <a href="#"><img src="./images/logo.svg" alt="Manage"></a>
         <!-- change visually-hidden to sr-only -->
         <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-          <img class="icon-close" src="./images/icon-close.svg" alt="" aria-hidden="true">
-          <img class="icon-hamburger" src="./images/icon-hamburger.svg" alt="" aria-hidden="true">
+          <!-- <img class="icon-close" src="./images/icon-close.svg" alt="" aria-hidden="true">
+          <img class="icon-hamburger" src="./images/icon-hamburger.svg" alt="" aria-hidden="true"> -->
           <span class="visually-hidden">Menu</span>
         </button>
         <nav class="primary-navigation" id="primary-navigation">
@@ -56,12 +56,13 @@
       </div>
     </section>
     <!-- middle section -->
-    <section  class="padding-block-900">
+    <!-- change sales-points class name -->
+    <section  class="sales-points padding-block-900">
       <div class="container">
         <div class="even-columns">
           <!-- left column -->
-          <!-- remove the inline style flow-spacer? -->
-          <div class="flow text-center-sm-only margin-bottom-700" style="--flow-spacer: 1.5rem">
+          <!-- rename sales-points__blob => shape -->
+          <div class="sales-points__blob flow text-center-sm-only margin-bottom-700" style="--flow-spacer: 1.5rem">
             <h2 class="fs-secondary-heading fw-bold">What’s different about Manage?</h2>
             <p>Manage provides all the functionality your team needs, without 
               the complexity. Our software is tailor-made for modern digital 
@@ -71,11 +72,10 @@
           <div>
             <ul role="list" class="numbered-items flow">
               <li class="flow">
-                <!-- replace inline styles with conventional classes -->
                 <div class="flow" style="--flow-spacer: 1em">
                   <h3 class="numbered-items__heading fs-600 fw-bold">Track company-wide progress</h3>
                   <!-- remove data-width, test -->
-                  <p class="numbered-items__content data-width="wide">See how your day-to-day tasks fit into the wider vision. Go from 
+                  <p class="numbered-items__content" data-width="wide">See how your day-to-day tasks fit into the wider vision. Go from 
                   tracking progress at the milestone level all the way done to the 
                   smallest of details. Never lose sight of the bigger picture again.</p>
                 </div>
